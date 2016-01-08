@@ -7,9 +7,10 @@ title: research
 
 <div class="cs148">
   <center><h3>Stanford CS148 Computer Graphics and Imaging Project</h3></center>
+  This class involved coding in C++/OpenGL. There were two main projects, a final scanline image and a final raytraced image. My final scanline image ranked 10 out of 119 and my final raytraced image ranked 8 out of 80. Below is the summary of the class and my images' progress.
   <hr>
   <div class="container">
-  <!-- inspir -->
+  <!-- plan -->
     <div class="row">
       <div class="col-md-4">
         <center>
@@ -19,8 +20,8 @@ title: research
         </center>
       </div>
       <div class="col-md-8">
-        <h4><b>Inspiration</b></h4> 
-        <p>I made that rough sketch in high school while volunteering at the Brooklyn Botanical Gardens, inspired in part by <a href="http://www.bbg.org/collections/gardens/japanese_garden">the BBG's Japanese Garden</a> and the Itsukushima Torii (a UNESCO World Heritage Site in Japan). The boat at the gate was inspired by in part by the Tōrō nagashi floating lanterns festival where the dead are mourned and sent off.</p>
+        <h4><b>Plan</b></h4> 
+        <p>The first week was an introduction to the course and to the physics, human perception and computer representation of of light and color (e.g. trichromatic theory, tone mapping, RGB vs CMYK). The assignment consisted of setting up the programming environment and learning the course code base that was in C/C++/OpenGL. I chose Visual Studio as my IDE, using CMake to generate the makefiles. I also began planning my image and decided upon a rough sketch in high school while volunteering at the Brooklyn Botanical Gardens, inspired in part by <a href="http://www.bbg.org/collections/gardens/japanese_garden">the BBG's Japanese Garden</a> and the Itsukushima Torii (a UNESCO World Heritage Site in Japan). The boat at the gate was inspired by in part by the Tōrō nagashi floating lanterns festival where the dead are mourned and sent off.</p>
       </div>
     </div>
   <hr size=3 width="66%">
@@ -29,29 +30,202 @@ title: research
       <div class="col-md-4">
         <center>
         <div class="thumbnail">
-          <img src="https://lh3.googleusercontent.com/kPlSdJz9ylNnJ5Qfta0W2NwgsVhcEA0QBMZG4-bHXeuNdF_ul-j1nZE4cohxuK5Hko3dJectxtZVogX9BTNTmQ52rMyrCEBOnYQ8OTvljcsMNAtCRHAoB4tyvBkh2YHyZKhzOUX3RZhETfrg8olh6nDMah5q8ukR9W_tlQtpRkN7Cy67cZc6WRIX0y1Ks22Byp5C39k_43KU_D3YmcKqHuidTeMVmzcsy1XDB-bI-dDyIoBJkpT4wkXvrPa6ztaPc6FNfQZ_95ZrhPymKbuGVBZGwyE7goBQSJi4LvTAYBRM4kQ2sQIaBcUUwIe1-PeAFqOYsRJ6MOsnlG9Qp_nPPE5HLuNFiowws4Jz8eeiZayd9BxTP86F6A7wmDHJD1e0RsQPg7UIH91Gk6PzWKjcjNo39LyiWJSgI5MIOzc0M4rGQ2etQK-_sQdIrUXhOE2SxcervXDeo9xpAI5N6UWfY4VPsyhFqb-aWTfrZNcm9fgpFinTyoQk6Ef2hFGgClIZmpCnQO1a8z2w4IFFo28xUtRahI0pRe30fV3z_TcN3DKstz6BzVaDCaf-rdE11QBGxnp-=w1113-h693-no" />
+          <img src="https://lh3.googleusercontent.com/thIaMHxvAHvvoT3kGIcaX3ofpNR8BsaXzNzcsOXsz0-9cZK7Ezm8hhdQ329SbXaLaqs2x77xWmd-ZnmzFbwtzzit3TMA80R4D66xP33Js53Lwnm0wILQIT_tqeIar0vPvfiXNks0OPSh6IzgZriwCq_cOMVB-aJe2B_6ahVc0y8wVEb1L3bwUqccqW9cM-G6nblJFveHka0_E5dMW95Pf9GceAVvm2ccWvLWgBjN-bBUcCZpN7YKKJ59ER0RovRb7DM_qhVxQ88SFgoO601qFM85kY9MtkYH6J_qCAL8hzImutJZmLNq8HJuJkIEMjeDfxDludwaaGGWCPMItyhKYVd-JbQ-M0GHMfYcJRzUXQDcEUXMwvai2_6hCB8w6MZHXCFibljjQMtJjgp_UwljF4NYM5tRT9N1o3Kz_lxfv6to3WjNRK_jdOMRiQWz1uPpg82iE4uC5fActd3iP3hMosScenU3Q2TTrjwxF8iuYQl7YN5iDrw6R0ZJxovUJvlhR9XcPhQTAKOqI8vXHLmt5vJc9498o3s9Coe5WXi4HCCnwY57L6zZ4HcyezTjcvYHq55E=w1220-h668-no" />
         </div>
         </center>
       </div>
       <div class="col-md-8">
-        <h4><b>Geometry, Models and Textures</b></h4>
-        <p>I made all the geometry in the scene except for the gate, which was downloaded from blendswap but I made the gate's texture. I CADed the boats in Solidworks using photos as a references, exported as .stl's and imported into Blender where I further edited the geometry and UV-mapped it for texutring and then exported them as .obj's. I made the textures using Pinta, a Linux paint program. The sky is a plane textured with an image I painted for mountains. The water is a plane textured with a photo of water and a normal map I made using CrazyBump.</p>
+        <h4><b>Geometry/3D Models</b></h4>
+        <p>The next week focused on scanline rendering and geometric modeling, which meant topics included OpenGL's rendering pipeline, triangles, rasterization used to color the triangles, and matrix transformations such as that for rotation and translation. The assignment consisted of setting up part of the scanline image scene by loading in a mesh found online and a mesh of one's own creation. For the online mesh, I downloaded a Torii gate from blendswap. For the mesh of my own creation, I CAD'ed a boat-lantern using Solidworks (since I am more familiar with mechE design than Blender) with a photo from a Tōrō nagashi festival as a reference. I then exported the boat as an stl and opened it in Blender to export it as an obj with the triangles and set other properties so it'll be acceptable to OpenGL.</p>
       </div>
     </div>
   <hr size=3 width="66%">
-  <!-- light -->
+  <!-- brdf light shading -->
     <div class="row">
+      <h4><b>BRDF lighting eqn and shading</b></h4>
+      <p>The next week focused on Bidirectional Reflectance Distribution Function (BRDF), lighting equations and shading. Basic idea is that when light hits a surface, it gets reflected, absorbed, and/or transmitted. BRDF calculates how much light is reflected and BTDF calculated how much light is transmitted (the T in BTDF is for transmission). The resulting light from a particular point is the result of all surrounding light, so the equation is an integral accounting for light in all directions. The default BRDF model in the source code was Blinn-Phong shading/reflectance model. The assignment was to code in C++ and GLSL the BRDF model used by Epic Games, which has three tune material parameters (roughness, specular, and metallic) and uses Lambertian equation for the BRDF's diffuse component and the Cook-Torrance Microface model for the BRDF's specular component. The assignment also included coding for point lights, directional lights, and hemisphere lights with light attenuation for the point lights. The scanline image didn't progress this week, so no pics.</p>
+    </div>
+  <hr size=3 width="66%">  
+  <!-- textures -->
+    <div class="row">
+      <h4><b>UV mapping, texture mapping</b></h4>
+      <!-- uv mapping -->
       <div class="col-md-4">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/9UTyn5maBibzagP-jpvEXCP8tP2qlUvaeU-u7_r6yRkP8FhmtUExCbOYhJRmNAiA-kO6J40Oqw2MXn60gTBomi2SOSJV-Tndg9LL3UKxiyu_09SaBy51IUG-hrsyW-if9SVq2MdcsYewpBI3BcQ9C-s1Fxc6GqYduJGABz_jhZ2lECSMfrWSH4w5yiUFSl25fo2fDa_WViDOvkeL7BkX6fdxC3xO_b9ivceu9spkunUV0BLeAJ2yRtVtlpUsImw-dc2LluIE77bpDjnKq-XQ8xgGFg0SzDAQXljnACA387T4LHpJTBh89Q9RZ8r7SW0QPrlkoLPG13KsBryH2aPhtv3EPnOX5bbLCXAZfzwk9nu-XcAwcL2_jlbN5q1CN_3jSE8pfvHmIYawW3JoA9q6LTV8toA6E9CRM18IR6Bkm8ysJwnk8GpNmZ8rBkLxp40jKOo3vVmQC27EYeqLMucbRDKwolDOrwpSVvqdAEDWfaC5YuL1H8QjLkrg8nJosKW8LD64fmlHnfvQveD7EPC2e6vxklVoEY3EFIJZ6Ur_vWgiORKZpkZZOHYInoV0fMJeWDZ5=w1101-h687-no" />
+        </div>
+        </center>
+      </div>
+      <!-- small boat texture -->
+      <div class="col-md-4">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/qv6Pjw0Mv-65GBb7bjaOSQzTTLGj6gg0Ua6RgqNiYInbH0C1aDjAZLo7ycykpb0PIGcV7DcU81CY2lFHqTNCeIUsVm3o0F8rMc2HSQ8BK3Nx-1MB6llM0knNGGhJGVRgivskrD5e0LiVS_YDe_NaQFP9E-CCUijbHifrlxgYrOXKPqoGpFuDdkIey_xU_iKXhWLQoVDj6OpAFfqPj2_yKxffQqt6rDCR9dCrrC_8QrEM1hIkcC0aBxtGEmFu7U8fQScNccwan2wM0PayoPPCn9bi0dtA4M74dFVqvmzRUjurE4EZCdv5shhL8WhZG9Ibr6yjdtmiPL6hrZHz3QKpynEmLBuwIX9MIg9eHbPV_8keghs2hgzJniqR2sNQ3LmKxNX8znS_Kf7VYtnFopX-UZFBlS6JLvoFFGSI0Q-BziC_fCcgUuf2qWJwRz0XpoSRAAVVT75DaF7-gDw4dLwgI4yUkeQ1dXakrOnKNxxbziXbK9aawrjhTJh4OkTM6yG0XwETZHdGWq4m6jja5Ku94ogv-yiwg3Tz_SN-Lgw-m8lxX5zqtc6nD_XxGXDWGo9Gqfip=w1099-h678-no" />
+        </div>
+        </center>
+      </div>
+      <!-- torii texture -->
+      <div class="col-md-4">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/pBAPcqASXt3yUjLFNyLoO1TbUEtOPxw8iBM4XqRv5v_hxx_SwdfOQkkuO8aEZp4W16X5AsKFWYpjMxK5BiFYJaNJXC3OJVgF7YiKHzRCgE29R1s-HOKjktFL9QtAN31FGGTJmZxUgQj-YkrehXPltfv2mG_iQ3lnl-6_vjMGS1wR1XFlhhhheiO-i6ZisGlVs4Ew_1oc2s-MsIOEsbA2oxbTq4d_eFUVnQB4F3bRINiRe0gnFNedmotKN8UG5pYQZMoqB3FovuMIzl_0wWRjuZ5-V3uV-L6-wouceusevN1k6fAp9XIniCG9D1sH8LIKjmlNDxeXQRyridtUx03Gb7gx8ikLRCzNg_ebKskyAPSq0Pg6VGkAs7BA2vyAgflOyxtimGFn3LgkTYCEbBJRWeapaQcTge6apeTwslVHNmgzolh14VdJp6eIFQK9j_ShThHQcja_iSnY7gwds9XYVoVHHHA3QW8gtgNxFGdQnfolZhMkD5a2yk-OhwnT4wsKCML0IFnDrqokGJGChQEsy3Dzo816EAD23YHmo_e49s8ntBn1wB-eKRiQGgKc6JTjsDtH=w1116-h683-no" />
+        </div>
+        </center>
+      </div>
+    </div>
+    <div class="row">
+      <p>The next topic was texture maps, normal maps (to bump-ify smooth surface) and displacement maps (to bump-ify the smooth edges). The assignment was to texture two obj's for my scanline scene with unique textures. I wanted to use the Epic shader built last week, so coded in C++/GLSL to include texture capabilities in that shader, but I also used the Blinn-Phong shader for some of the obj's. For the torii gate and the boat-lantern, I used Blender for UV mapping and used Pinta, a Linux paint program, to splice images of wood, paper, copper, etc into the textures. The process is shown in the photos.</p>
+    </div>
+  <hr size=3 width="66%">  
+
+  <!-- scanline image -->
+    <div class="row">
+    <h4><b>Final Scanline Image</b></h4>
+      <!-- big boat creation -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/5HcEYXFF0ObtmXk2nR4KdaI7jNvHlq4NQJQ245Nf9SLFbkOOecyPTVdmaSgxKEy9zIM_sLKvg8-83IirIiLL7ReJKygznMzlIdcpW8B9TwgIGp4DWdciYJj9iHeSJGJ3QJHfTlSw3xVDNvFYAzTptsicNP7s7OLhRl3HpePFHg7PfIL5ehoboUVy6NKBS1VJGyP5Z0FU6KhYTXD7ijBYx1WKrvY45uy_AxxOjmcU_FJvb4GY1hMD3C3BeQ0mwLOzCn68ZQcfXOS9l67fel3bFudUS10fKoDsP4WmdPBlvCXeRHJKRNj1mYWR_v7F88Wf3zwvHmPVoMlwCxGLvvGoXJZ4YlqbQISrJlw1hBEeDxcERssUOnGnD3HH2Xi-37lISVv8hjxrYZ9R_2AfGeVxeP4CWO7tRhgAtuoRCv6m7zrm1onL4UNdDWtleIh9nOjBzn6O5g_qToIwhDHZygyXSXokkU7PRfTEdLNvlVkMXOWY8cAGn-f08_C4TE4x71mXnnSRwBXtrCa7IdRj3TdOzqHMZ5197QFE5526BwpodRDo512SZleMsNw8VIT-MQVNpBg_=w1508-h849-no" />
+        </div>
+        </center>
+      </div>      
+      <!-- big boat uv and texture -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/exBVZMw9ygey_oWbnVKu2sbDAntjU1ZgearAFWb8b66k205ffIjKzMiqBqVTwvBop5WKTgjq6MlgiOK_mAI3J2LHi6F-8T4xkAZbWt8aDlsO2JcyU1fsfAjOXLL-aefWHjYxDZdKqL466zK9sM-lOLtMZvibypbcdscETviujnspY7Zma6BwBnUxmKUw6twTFdTcxc3RvbmeRFs7NlHlUe0pg9KHiDV1WdqXRjLS3Pvu3WS6hoDXmg5bzv_w9AUoSvwxOwJjhWIPacEMY2S00biqM-B8cTdgHL52z4htTmQcjA6rLDNbvRiMh31l_fs4w4DenHkNd6-KnvFOZLqD8JeTjlw4CdCzPwKH23VvZrRKClLTB_DhkSvOW20bLHGOPTi-vOIGDGjiFLBMW46iq25ILE49Nz5khXP83HA9JHmOtpakwkA1_rJR7loWJRI0uSF3k3Y--G_x-Opjv_BX8ZFVAHIZqlyJ-awpwoCYKi8mZJ4PRbxPhuv39BD6tita5fuS2M3fEk-axH9sprqFjeFRxp70YZ_MYxOZzVYGYZT5kxjQsKM6U85uXCWZF4H8PS9B=w1113-h693-no" />
+        </div>
+        </center>
+      </div>
+      <!-- normal map creation -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/xwuFny9ZrPivXaWJCs6ga459WesyOercWIEb4uqe8WjuQ6HbOkOwg_HWQkqhXCPRcobs6jCDSsUrOH07dRpAA54Wwo0uLjNHuYnmNmEzFFwGuXeziBCrpRN9ai4fYZbgl71VhoMoH8WDrURrvcMTCIibt-yuJChDrUqnU7-i5owccQhODd54DMh9CPL8SYkySSDhFpJHgEw0PkFS2W6uEz9X_74VSVLFgBKyNScq1gC86--vLjp2RXWS8YXI3BwPQG8KcU_n72kN4QXscwUOoIvGVX0c-kZWnyGNe3NbnSE47aEHogfY7PBTEkJSbvpKfaQBoc6g5UvzPDCqYw1ErolHE15kLNNmh7DPQ985N9i5244_NZL9GMWOMTRhV4EGk0vxdgavZ5xwwQKpZ9a54ul66Fz0skN2KMMEqKIuwSKbBYiU4LQFXcfZOSEi5qBhDXsq2CFnLn5HOKwM1eCYVQV9CGGxlU1jWjUfgptiEuqzkEdf5tf4UDkxpJr8BI1usTDRquRZl09I5hNjvcByRiCsWW69V0H2uQYNPwYUtenOlczbcRzLgBCld63Yljd7R8M7=w1110-h639-no" />
+        </div>
+        </center>
+      </div>
+      <!-- all objs and textures in scene -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/cIMsV5dMgOpS7Z0xlCXxIJIAe1xSPejzsru3er7oYLVEEIGTb6Gsm9inrhg-5Gyss4kgmKKd5u-Qd06lbOUKnqhfoavQdoxqYHSfby6Q4bXo2WOY9p1rKNH7Ujt_ogBbVfdMQm6zJpLe8ihPjc4YiKDhjODH-KaElyozZHgO-F844Af_OYihafL0LOYJ79rZihGiXQCU6Y7N7InEy7jyt9m6ARDNUHUlorzDZOBdOm5MeoMKQVs-1CKp8Mv8tzMpxTNib0zJvuLkls2qg1CuJD1K4PFVyzml0wvX7aZxHjYCkfVYk5uYC0BBkVgUciidBcYWQdes3bjMzzFfG2RVa37GPLXsBuC4U6hKev0LKedj3Bncan_NiVRGrVIseWP7c6CSopM0zY1b-gmi8msU8Cp1TwiywV30uM0Hu8aMGNSzWZ8W1aOTg0kgDR5LE0rV-iVTtkSGnd7BkZJLTCj6IqhV5sTV7U8375shxfyop5Ogg65GalycY8Bn08GmgXHqzWVWxgcABFF20HfSoMWMH0A2NapXTa12uw0cShCsb26HF8h4mVW4CIEAlTEUK3j4EeLu=w1213-h669-no" />
+        </div>
+        </center>
+      </div>
+      <!-- fix the lighting -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/_JT8uV2H1NdtXak_htD4tnCC1XTo36zdtqR5WSw1DFD7gMeRRYj58H5f7nUixgumu6f9PSAjmCgftjywPgduBnBfUWJ5W1Zipn469_qSVFw0lV1kOGTvMv0r8sdIFKQHZQLnD3HSSQrTc2AB-uNaEwKzis1pXar66RzuviyVZaVdN7XrVwSf03OQDc6Jfpt1b_TTXCk8egMda2lZ409ih3MWlKNnbTZ9kiSdOClxriy7CU-Bz9o8kmhhnLyg6piYqUfC_s3ELTZmge9Ga9yxCgAITpeGGZMGNo47TYDxT6wvJXAkiqBF_t18v_5gVUAbr4nUVf8mrEKy2ag-VwLdubLgyW7jso90l1e_7JSfFAKgIklTS4yVBpzKQTcoqQmUkjJ0HZ3HBohwPSv6pLS6-CMYjoSpsFVDP5j0gWdnvK-5ZvNidKir0UbbhDY8XWXuQ3t609nsV1ggPf9cq8G0CJI70rUwIz9myIixNe2eT3qpEKyDhZwYXrS3_vby6Qs78wysm9M0nRs-YBrBtEnn8st1VDkkCRA_9INpKSVr01bz8VdARlkPYuQhvzLitUbQpUHg=w657-h369-no" />
+        </div>
+        </center>
+      </div>
+      <!-- edited background -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/RwqdMoiH3keFC3YWaTxXPCG0zW7HO0zCLxuf89uRsPDg4G3EU7ChvCvz4H8fCLIkg1zGz-Fk2lAfBdi_vSKAyi-WcLbB8FkTd8DFZMqb-Lh7uGn2m_ZLyU81cpUnG0bisYj-iKcvfMxlGdL78WpGen4NAn210lBZHU6k1-WGoj4aOZP-b43h8paBVTMSfD-zGdtZ4CTZ9vilYV8L6-dIOEbofLmi7Z2uRomwICvIu7OwDzcfNqHrY_SaSnv7ks6uLKaKvIY61p5fhyeEDLNCJERf7Inil5R4NwnOgQ8PxdyFO6rWdRnwcE0r7-aAHXeR_p29aAIsPlc3odp-hUeKhbL4-5DHKU0JIILMi8DlI0AafLMiFaDZXClJFVZnshI-a_1o4Idybptxv911VJr1QR3qz5TOsvWVX3fuT-2M1M8TtkEe56Mv2jk3kYDviNdKikPuC7jplju2Rsyj563cG11gDJ3vhbXyQ3sogf5WXZ8fsc-hNc_4HXTQf2m6QSwVwBQT-F5co09h_DcXKNAyHKAwB08KkswzadedYHiAxDpgqwFoWNRxYMfjkJUp7GAHiEkE=w1508-h849-no" />
+        </div>
+        </center>
+      </div>
+    </div>
+    <div class="row">
+      <p>No class this week as students worked on their final scanline image and presentations. I decided a scene with just small boat-lanterns looked a bit plain, so CAD'ed a more complicated and bigger boat-lantern in Solidworks, just a quarter of it since I can do mirroring to get the rest due to the symmetry. I then UV-mapped it in Blender and textured it with Pinta. For the water, I used Blender to make and UV map a plane that I then textured with a photo of water and a normal map I made using CrazyBump software. The sky is just a plane obj UV-mapped and then textured with a photo. I placed all the objs in the scene, using a loop to get all the smaller boats and their respective point lights in (only lights in the scene were point lights that corresponded to each water lantern). I then fixed the lighting, added attenuation, adjusted the color, etc. For funsies, I painted mountains on the background image.</p>
+    </div>
+  <hr size=3 width="66%">  
+
+
+
+
+  <!-- intro Ray Tracing and Sampling  -->
+    <div class="row">
+      <h4><b>Intro Ray Tracing and Sampling</b></h4>
+      <p>This week, the goals were to introduce the concept of ray tracing and sampling. Instead of a per triangle operation like in scanline rendering, ray tracing generates an image by starting from a screen pixel and tracing the light paths backwards into the object space. When the ray intersects with an object, rays are cast from that intersection to the light sources and the final shading is the combination of all those sources, which is how ray tracing produces shadows (whereas scanline rendering doesn't automatically produce shadows). Sampling at a low rate, below the Nyquist frequency of 2 samples per period, results in aliasing artifacts, aka 'jaggies' because the screen pixels aren't in line with the object's lines. Assignment consisted of setting up the raytracer starter code and experiments in jittered sampling and adaptive sampling (stop sampling a pixel after a threshold if the color is uniform). Brainstorming on final raytracer project scene.</p>
+    </div>
+  <hr size=3 width="66%"> 
+
+
+  <!-- Reflection and Transmission  Acceleration Structures  -->
+    <div class="row">
+      <h4><b>Reflection, Transmission and Acceleration Structures</b></h4>
+      <p>This week, topics were reflection (opaque objects reemit the light for reflection), transmission (transparent object allow light to pass through neighboring atoms and reemit on the opposite side of the object calculated via Snell's law),  and acceleration structures (speed up rendering with bounding volumes). With reflection/transmission, must avoid recursive stack overflow when setting the maximum depth of the ray tree since each ray reflected or transmitted recursively spawns their own reflected/transmitted/shadow rays. Instead of complex  ray-objection intersection tests for whole scene, bound the complex objects in boxes or other simpler geometries because if the ray doesn't hit the bounds, then it doesn't hit the object. Assignment involved experimenting with uniform grids (when have uniform spread of objects) vs bounding volume hierarchies tree (contain subparts of complex objects in their own bounding boxes) as the acceleration structures. Decided to stick with scanline image scene for the ray tracer, no raytraced scene yet, but the water will be low transmission and high reflectance.</p>
+    </div>
+  <hr size=3 width="66%"> 
+
+
+  <!-- Global Illumination -->
+    <div class="row">
+      <h4><b>Global Illumination</b></h4>
+      <p>This week, the topics were global illumination (model indirect lighting to get soft shadows and color bleeding) and photon mapping (a technique for achieving global illumination). Global illumination models surface-surface bouncing of light to get indirect lighting effects, such as diffuse interreflections (allows for color bleeding) and caustics (kind of like a sun+magnifying glass effect with a bright concentration of light). A technique to achieve GI is photon mapping, which scatters rays (photons) from light sources and when an object intersection occurs, stores the photo in a photon map. Assignment was implementing photon mapping by creating and scattering photos recursively, storing their information in a photon map, and implementing a Monte Carlo method called Russian roulette to determine whether to bounce or absorb the photon, and then displaying the photons as red dots on the Cornell Box scene. GI would be cool for my raytracer image, but it's an outdoor scene, which means most of the photons generated would be lost anyway.</p>
+    </div>
+  <hr size=3 width="66%"> 
+
+
+
+  <!-- Advanced Rendering -->
+    <div class="row">
+      <h4><b>Advanced Rendering</b></h4>
+      <p>The last week of lectures before Thanksgiving break was on advanced rendering, covering motion blur, depth of field, the gathering step of photon mapping (using the photon map) and volumetric rendering (for smoke and fire). The assignment allowed a choice of implementing one of the techniques learned that week, but none of the advanced rendering techniques would make sense of my final raytraced scene, so I chose photon gathering as the assignment I would implement, since it's a pretty cool concept.</p>
+    </div>
+  <hr size=3 width="66%"> 
+
+
+  <!-- raytracer -->
+    <div class="row">
+      <h4><b>Final Raytraced Image</b></h4>
+      <!-- placing the objects -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/wZDcjroFWgzQgnD25KMEcBiDmDnWukuL_TToFOExa5AFntYogrcS88x3lRLtsrWuez-tErFnOjeztwQ_iDzGVizH4cNcgnAw8ojh8gfEkSZ9BAUubA4pRxm16yGQt1oictbNu5t-h1v3jG4_ks-c-kkiqGqXX50ouxvnholp1SH-gUSKMsuM7Y3czpcJqeAttrnY_fpDD5-3etGp6rv6kAeifzsEruq1Be8sHI--T2IKpj_aiqSiEAh6w7KQsVb7EM-WeDRtkWxEiSybcbZMTRfSItPUuucGzDKknWLgRZO4lwhlq-cB5snfS0cnqg06kUvZkyC1fTZnfSqkYuImhgENJOb85UTimzBUOIPTXZ30s1ydFqIhaUDXcdpiS5Qpj0i0v3YKX7BPEhzD-ZACHDEw516zLFOIuA1qtR3F04zZuknyfUIx9MAstSF6h7wUe-NpqFdg38AwnZe-a9p57JYvqBBcvR8IbFtfsj84F04SJKR4iffU2eJ-Cq-gH4BXSIZV98fzA6JHEeigXRAxUsW2l8bqSRK_H5SkyO_xXgeL_20xm7R0TPzkZZgOeWSU4KCY=w1280-h720-no" />
+        </div>
+        </center>
+      </div>
+      <!-- fixed bg add all objs and pt lights w attenuation and color -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/1887A2CjdcfNbBJ82b_gNX1cb0S-wpc1iM2ZZjCvflJpipu8vTpUm3AW1YKaAulYUXnXHt09r_APS8rS38IMI60bQoTFOZ5K-MNRe7JfOoWzNnSBm19iN9qGqqKLe-jCjTn8NgtVRPUzbcoBtQ_tKNh3HYZ3Vqk50iuUg9CJ7bOu-3do5XnBdazsJ-ODhQCSTmz5kXOmjxWip82LybhWKMssvMFcKj3PfGccem91C42DspVkX_2s5ta3Ouu-yU65P8PMg6VWAQpNPNl_CsCfufZBMT7VN4annmgWfMxf8xFfVJYoclCTuZ9AaNc1R_0UAw8RQ55w9U9Q9HjIui9BGD5FP4KQaUzhHVMv_A9bAvWPxKU2U2cRSLLXf7eK8gsNwxSzk61zErymePW7C344qyDLVlI7YMdsxfsF3JnUg9U1CLVc4M-jCaM4VCuykU84ci_XXgxxdmAU_tdsXLBKulz6BnEJ08Ujzf33zDiC97-OAVkOIDAPCtC8Kbfo2v13HjVcez6OK5FWGcUsDtGNMvTGE926vy1Mxr4hRkz7ucUTn883JOn49XXAsoch-iT0a3yU=w384-h216-no" />
+        </div>
+        </center>
+      </div>
+      <!-- reflections -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/y7kZ0suH6KKVKgQg0CAAxhnGltaFDr7kyVX0N9wdhzje3DaDBuJSPeuh0ZLTLM5rS-rA3xzrJgcCTTpJDiLG8IGId6oe2Or7H1KmAe455HHufvCIGmxHUxEqfQaMaGzY28DQZoG3iriis3dp_KuPtRRwAYf9hlMApg28vqJabH4dW4drcFGsqpIJwZvP31PdtE888ANbHHouaQ0AWQXaG5i3u4yWjpYolFfmpkynTRsEgbk-Rj-KV1ThCF0Ru3kHKiUf4JWiPNigDCjLzgjh5gI0Vftwqg7aousLlqfEqUwd1MUgcQ1OcVfBMpq9cHczu-N1S8HfkfEqKxgbJmsnqWd80ldySd9zA_uQrWgWRDLAcpm1zK2Yrs1QibNZKwE8pwyXDJSlZRDZbox_zj0BIExY3PjuuZEG6cIhJkJsCi7uLkG-Op-muLYMAEMMCxJFm2IF6WNzEF1XdCl1H_6qX3ueio2VH8Q02_S9T4u5Jz81ZVWB0NNdclXHdzJ27AfkSPz5jToUPpWrJZ9GBDXf4ygVDgJhBg6jwdI_KZZPzLFAlMxi-vF9qSt2PC6zItTuQjlS=w384-h216-no" />
+        </div>
+        </center>
+      </div>
+      <!-- edited torii texture, add more boats, lighten BG -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/0E58zVtBkyChM1etm_n7xvBO5qv_-TktOwzffT_-oqxRP96A1a6_05eKdsuYtTqRuJOoO0kx3DqCrcyFu1sDWSG9kqXqc6sJSC4cKPbgckvV06GfEZ0az3kJ80SHEcUycysgZLi4ylC_u__-u_mAxVYZl7qn-DrVw151xdJG1j2jt7gpcDyKYZWmGVPPBJVhViBQa2cYH1wMyXKHyc7pWxioFUwHysoJmtI0ErFZe9f9WI7KjL6MlZpWFt0r_-zsDijF7OdaCbxQEiGGGqQYomgsqn8WTTdeiEirID4me-NdlugnhU_JD3kz0OQTox6Aty1nq6UWpgiACNlZ9cVr7WhEkdoA7O7CQgi0q5Z7Kk0Dd2Yc_oyCQq1bL2jfkUU4sbosw-RPNrwRB_auTWptVKluPuYnS-qDJ_mCDCtcDqfE2f2fIFDYF4phhWI-J2pToDeaEZZJK1l27sBxlJAU5zmUHWUYh8K4F7G18KOiLalWlltyoE7BEfN4xvCueqyOcYSBegEQf_v-qSNtHWM154gtGiEEaI4h0lcPAMjqmB6vF0FyAqykXBBq3E4wERMfdv4X=w512-h288-no" />
+        </div>
+        </center>
+      </div>
+      <!-- adding writing to small boats -->
+      <div class="col-md-2">
+        <center>
+        <div class="thumbnail">
+          <img src="https://lh3.googleusercontent.com/EU9AFB_wpyiWIgh_n9E3gvZ6iLnqXoGz4rY_y_Go1rIQUI2NfGaJEOTHb86o_sKu3cpfCQZWtpKRBVBtGI-qOeVREegmGexM2Ty07peiDj_uiBVmzUGTa4OGubn39RQs6jLab2RrO9UbzB_yB01xdVw-vkF2EeBc-ZBVRgmtXfLf5FWlAnJ90HslEMWHK5-VaGp-W4Whnh9cEefzO1__5TcAUGryrH95hgoCK-S06-EU314nk68pgPN5pLmgRPa5lqpZ7krlPO3enBP8YBNPZlx_9veHLnyao-qt9wx-yrNUdofrcKnlT9w6A35dNxEtE-ic6AB_tbioZrkgl8a9Zl644-emMuIrY_TooSgPTAY6D4Gf0NYXLl_CjmYRKGNPaWfIf7H07W2xW633UV_c6t8wlMFVwCX3Hht56s0Ssgspv0TH4SlpU6jdQjyHbplsAtTyWTHxbUQlmPP_aNOrX_uz_eF_HRPfMEtacFFxmLuIS4rg3CJlc_Snw-wlp8278iGvnWWhIo6NxJ4zMjqw5jc4umHqZ5wceRxQpalwQux1zZKqH4PDtiIqJQHf6Rwt-ydV=w1508-h513-no" />
+        </div>
+        </center>
+      </div>
+      <!-- final rendering -->
+      <div class="col-md-2">
         <center>
         <div class="thumbnail">
           <img src="/projects/cs148/cs148.png" />
         </div>
         </center>
       </div>
-      <div class="col-md-8">
-        <h4><b>Lighting</b></h4>
-        <p>The scene only contains 16 point lights, corresponding to the 16 boats, all added in with a for-loop with position vectors that I specified. Added attentuation functionality to raytracer.</p>
-      </div>
+    </div>
+    <div class="row">
+        <p>I started with placing some of the objects in the scene, noticed that the ray tracer's automatic shadow effects on the sky plane and edited the code and the material section to ignore that. Then I placed the rest of the objects along with the respective lights with attenuation and color. I turned on reflections and tweaked the max depth and other parameters. I edited the texture of the torii with Pinta and added more boats to the scene to get a diagonal leading line. I edited the texture of the smaller boats with Pinta to have writing on them as they would if in a Tōrō nagashi festival. I then rendered in higher resolution with 36 samples, taking about 5 hours.</p>
     </div>
   <hr size=3 width="66%">
 
