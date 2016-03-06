@@ -95,7 +95,7 @@ var bisectCoord = d3.bisector(function(d) { return d.study; }).left;
 var zoom = d3.behavior.zoom()
     .on("zoom", draw);
 
-var jsonPath = "train_explo.json";
+var jsonPath = "explo.json";
 
 var data = [];
 
@@ -126,7 +126,7 @@ d3.json(jsonPath, function(error, json) {
   }
 
   // Scale the range of the data
-  x.domain([0, 500]);
+  x.domain([0, 700]);
   zoom.x(x);
 
   y0.domain([0, d3.max(data, function(d) {
