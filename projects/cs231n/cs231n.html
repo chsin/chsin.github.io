@@ -112,7 +112,8 @@ d3.json(jsonPath, function(error, json) {
       var num = json[s][slice];
       if (num > max_files) {
         max_files = num;
-      }  else if (num < min_files) {
+      }
+      if (num < min_files) {
         min_files = num;
       }
       total_files += num;
