@@ -1,0 +1,51 @@
+---
+layout: default
+title: cs231n
+---
+
+<head>
+<!-- load the d3.js library -->    
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<style> /* set the CSS */
+body { font: 12px Arial;}
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+</style>
+</head>
+
+<div class="cs231n">
+  <center><h3>Stanford CS231n Project</h3></center>
+    <div class="row">
+      <center>[summary]</center>
+    </div>
+  <hr>
+  <div class="container">
+
+
+  </div>
+</div>
+
+
+<!-- graph -->
+<script>
+var jsonPath = "train_explo.json";
+
+var data; // a global
+
+d3.json(jsonPath, function(error, json) {
+  if (error) return console.warn(error);
+  data = json;
+});
+
+</script>
+
