@@ -1,0 +1,159 @@
+var sax_check = d3.select("#sax_check")
+var dcm_check = d3.select("#dcm_check")
+
+var margin = {top: 30, right: 40, bottom: 30, left: 50},
+    width = 900 - margin.left - margin.right,
+    height = 270 - margin.top - margin.bottom;
+
+var svg = d3.select("#chart").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform", 
+              "translate(" + margin.left + "," + margin.top + ")");
+
+var x = d3.scale.linear().range([0, width]);
+var y0 = d3.scale.linear().range([height, 0]);
+var y1 = d3.scale.linear().range([height, 0]);
+
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").ticks(5);
+
+var yAxisLeft = d3.svg.axis().scale(y0)
+    .orient("left").ticks(5);
+
+var yAxisRight = d3.svg.axis().scale(y1)
+    .orient("right").ticks(5); 
+
+var saxLine = d3.svg.line()
+    .x(function(d) { return x(d.study); })
+    .y(function(d) { return y0(d.sax); });
+    
+var dcmLine = d3.svg.line()
+    .x(function(d) { return x(d.study); })
+    .y(function(d) { return y1(d.dcm_sum); });
+
+var bisectCoord = d3.bisector(function(d) { return d.study; }).left;
+
+var zoom = d3.behavior.zoom()
+    .on("zoom", draw);
+
+var jsonPath = "explo.json";
+
+var data = [];
+
+d3.json(jsonPath, function(error, json) {
+  if (error) return console.warn(error);
+  for (s in json) {
+    d = {};
+    var total_sax = 0;
+    var total_files = 0;
+    var max_files = -Infinity;
+    var min_files = Infinity;
+    for (slice in json[s]) {
+      total_sax += 1;
+      var num = json[s][slice];
+      if (num > max_files) {
+        max_files = num;
+      }
+      if (num < min_files) {
+        min_files = num;
+      }
+      total_files += num;
+    }
+    d.study = s;
+    d.sax = total_sax;
+    d.dcm_sum = total_files;
+    d.dcm_max = max_files;
+    d.dcm_min = min_files;
+    data.push(d);
+  }
+
+  // Scale the range of the data
+  x.domain([0, 700]);
+  zoom.x(x);
+
+  y0.domain([0, d3.max(data, function(d) {
+  return Math.max(d.sax); })]); 
+  y1.domain([0, d3.max(data, function(d) { 
+  return Math.max(d.dcm_sum); })]);
+
+
+  svg.append("path").attr("id", "slice")    
+      .attr("d", saxLine(data))
+      .attr("clip-path", "url(#clip)");
+
+  svg.append("path").attr("id", "dcm")
+      .style("stroke", "red")
+      .attr("d", dcmLine(data))
+      .attr("clip-path", "url(#clip)");
+
+  svg.append("g").attr("id", "xax")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g").attr("id", "y0ax")
+      .attr("class", "y axis")
+      .style("fill", "steelblue")
+      .call(yAxisLeft); 
+
+  svg.append("g").attr("id", "y1ax")
+      .attr("class", "y axis")
+      .attr("transform", "translate(" + width + " ,0)") 
+      .style("fill", "red")   
+      .call(yAxisRight);
+
+  var focus = svg.append("g")
+      .attr("class", "focus")
+      .style("display", "none");
+
+  focus.append("circle")
+      .attr("r", 4.5);
+
+  focus.append("text")
+      .attr("x", 9)
+      .attr("dy", ".35em");
+
+  svg.append("rect")
+      .attr("class", "overlay")
+      .attr("width", width)
+      .attr("height", height)
+      .on("mouseover", function() { focus.style("display", null); })
+      .on("mouseout", function() { focus.style("display", "none"); })
+      .on("mousemove", mousemove)
+      .call(zoom);
+
+  svg.append("clipPath")
+      .attr("id", "clip")
+    .append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("width", width)
+      .attr("height", height);
+
+  function mousemove() {
+    var x0 = x.invert(d3.mouse(this)[0]),
+        i = bisectCoord(data, x0, 1),
+        d0 = data[i - 1],
+        d1 = data[i],
+        d = x0 - d0.study > d1.study - x0 ? d1 : d0,
+        y_value = sax_check.property("checked") ? y0(d.sax) : y1(d.dcm_sum);
+    focus.attr("transform", "translate(" + x(d.study) + "," + y_value + ")");
+    d3.select("#log").text("study " + d.study + ", #slices " + d.sax + ", #dcm_files " + d.dcm_sum + ", dcm_max " + d.dcm_max + ", dcm_min " + d.dcm_min);
+  }
+
+  draw();
+});
+
+function draw() {
+  svg.select("#slice")
+      .style("display", sax_check.property("checked") ? "" : "none")
+      .attr("d", saxLine(data));
+  svg.select("#dcm")
+      .style("display", dcm_check.property("checked") ? "" : "none")
+      .attr("d", dcmLine(data));
+  svg.select("#xax").call(xAxis);
+  svg.select("#y0ax").call(yAxisLeft); 
+  svg.select("#y1ax").call(yAxisRight);
+}
