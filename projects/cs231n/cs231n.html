@@ -18,31 +18,182 @@ title: cs231n
   <hr>
 
   <div class="container">
-  <!-- plan -->
+  <!-- summary -->
     <div class="row">
+      <center>
+      This is a visualization of the work did for CS231n
+      </center>
+    </div>
+  <hr size=3 width="66%">
+  <!-- overview data -->
+    <div class="row">
+      <h4><b>Overview of data</b></h4>
+      <!-- dias -->
       <div class="col-md-4">
         <center>
         <div class="thumbnail">
-          <img src=""/>
+          <img src="./diastole_example.png" />
         </div>
         </center>
       </div>
-      <div class="col-md-8">
-        <h4><b>...</b></h4> 
-        <p>..</p>
+      <!-- sys -->
+      <div class="col-md-4">
+        <center>
+        <div class="thumbnail">
+          <img src="./systole_example.png" />
+        </div>
+        </center>
+      </div>
+      <!-- dcm meta -->
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="./dcm_explo.png" />
+        </div>
+        <p>Kaggle dataset consists of >160,000 MRI images from 500 studies w 4D dcms. Many of them are sized around 256x230, with some oriented horizonally, but we also have 448x336, 384x512 and other variations in sizing. Our first inclination was to just crop all of them to be square using the shorter side and then resizing them to be the same size. <img src="./crop_center.gif" align="right" /> While this worked well for some, it didn't for others whose centroid (the region with the most relevant info) were not centered. </p>
       </div>
     </div>
   <hr size=3 width="66%">
 
+  <!-- overview data -->
+    <div class="row"><center>
+      <h4><b>Scaling to volume, localize centroid crop</b></h4></center>
+      <!-- dias -->
+      <div class="col-md-12">
+        <center>
+        <div class="thumbnail">
+          <img src="./kmeans_diff_runs.png" />
+        </div>
+        </center>
+      </div>
+    </div>
+    <div class="row">
+      <!-- sys -->
+      <div class="col-md-3">
+        <center>
+        <div class="thumbnail">
+          <img src="./deltas.gif" />
+        </div>
+        </center>
+      </div>
+      <!-- dcm meta -->
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="./mean_deltas_cropping.png" />
+          We decided to look at the deltas for localization and it seemed to work well.
+        </div>
+      </div>
+
+      <!-- dcm meta -->
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./delta_cropped/slice_0.gif.gif" />
+          <img src="./delta_cropped/slice_3.gif.gif" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./delta_cropped/slice_6.gif.gif" />
+          <img src="./delta_cropped/slice_9.gif.gif" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./delta_cropped/slice_12.gif.gif" />
+          <img src="./delta_cropped/slice_15.gif.gif" />
+        </div>
+      </div>
+
+    </div>  
+  <hr size=3 width="66%">  
+
+  <!-- overview data -->
+    <div class="row">
+      <center><h4><b>Constrast fix</b></h4></center>
+
+
+      	<p>Some of the images differed greatly in pixel range, with many that were so dark it was difficult to see the LV. Thus, we used histogram equalization on the original dcms and deltas after cropping with mean deltas.</p>
+
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./study3_mod/slice_0.gif" />
+          <img src="./study3_mod/slice_0_mod.gif" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./study3_mod/slice_3.gif" />
+          <img src="./study3_mod/slice_3_mod.gif" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./study3_mod/slice_6.gif" />
+          <img src="./study3_mod/slice_6_mod.gif" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./study3_mod/delta_0.gif" />
+          <img src="./study3_mod/delta_0_mod.gif" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./study3_mod/delta_3.gif" />
+          <img src="./study3_mod/delta_3_mod.gif" />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="thumbnail">
+          <img src="./study3_mod/delta_6.gif" />
+          <img src="./study3_mod/delta_6_mod.gif" />
+        </div>
+      </div>
+    </div>
+  <hr size=3 width="66%">  
+
+	<!-- overview data -->
+		<div class="row">
+			<center>
+				<h4><b>Exploration of the folder structure</b></h4>
+			  <br>
+			<input type="checkbox" id="sax_check" onclick="draw()" checked="checked">slices
+			  <br>
+			  <input type="checkbox" id="dcm_check" onclick="draw()" checked="checked">dcm files
+			  <div id="chart"></div>
+			  <div id="log"></div>
+			</center>
+		</div>
+  <hr size=3 width="66%">  
+
+  <!-- overview data -->
+    <div class="row">
+      <center><h4><b>Dealing with slice and dcm irregularities</b></h4></center>
+
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <img src="./randX_input.png" />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+
+      </div>
+    </div>
+
+	</div>
 </div>
 
-<center>
-<input type="checkbox" id="sax_check" onclick="draw()" checked="checked">slices
-<br>
-<input type="checkbox" id="dcm_check" onclick="draw()" checked="checked">dcm files
-<div id="chart"></div>
-<div id="log"></div>
-</center>
+
 
 <!-- need to put at bottom after all the html is init-->
 <script src="plot_explo.js"></script>
