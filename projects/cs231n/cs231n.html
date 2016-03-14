@@ -12,16 +12,13 @@ title: cs231n
 
 <div class="cs231n">
   <center><h3>Stanford CS231n Project</h3></center>
-    <div class="row">
-      <center>Handling data irregularities</center>
-    </div>
   <hr>
 
   <div class="container">
   <!-- summary -->
     <div class="row">
       <center>
-      This is a visualization of the work did for CS231n
+      This is a compilization of the visually interesting portion of the work did for CS231n that could not fit into the paper.
       </center>
     </div>
   <hr size=3 width="66%">
@@ -50,7 +47,8 @@ title: cs231n
         <div class="thumbnail">
           <img src="./dcm_explo.png" />
         </div>
-        <p>Kaggle dataset consists of >160,000 MRI images from 500 studies w 4D dcms. Many of them are sized around 256x230, with some oriented horizonally, but we also have 448x336, 384x512 and other variations in sizing. Our first inclination was to just crop all of them to be square using the shorter side and then resizing them to be the same size. <img src="./crop_center.gif" align="right" /> While this worked well for some, it didn't for others whose centroid (the region with the most relevant info) were not centered. </p>
+        <p>
+        Our first inclination to handle irregularities was to just crop all of them to be square using the shorter side and then resizing them to be the same size. <img src="./crop_center.gif" align="right" width="150%" height="150%" /> While this worked well for some, it didn't for others whose centroid (the region with the most relevant info) were not centered. </p>
       </div>
     </div>
   <hr size=3 width="66%">
