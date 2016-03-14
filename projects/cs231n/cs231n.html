@@ -84,17 +84,19 @@ title: cs231n
   <hr size=3 width="66%">  
   <!-- overview data -->
     <div class="row"><center>
-      <h4><b>Scaling to volume, localize centroid crop</b></h4></center>
+      <h4><b>Localizing centroid</b></h4></center>
       <!-- dias -->
       <div class="col-md-12">
         <center>
         <div class="thumbnail">
           <img src="./kmeans_diff_runs.png" />
+          Experimented with kmeans and Hough transforms for circle detection, but didn't perform well.
         </div>
         </center>
       </div>
     </div>
     <div class="row">
+      <center><h4><b>Using deltas</b></h4></center>
       <!-- sys -->
       <div class="col-md-3">
         <center>
@@ -108,6 +110,7 @@ title: cs231n
         <div class="thumbnail">
           <img src="./mean_deltas_cropping.png" />
           We decided to look at the deltas for localization and it seemed to work well.
+          Timeseries deltas across sample slices shown in this row for Study 1.
         </div>
       </div>
 
@@ -130,6 +133,7 @@ title: cs231n
     </div>
 
     <div class="row">
+      <center><h4><b>Localization results with deltas (top) and slices (bottom)</b></h4></center>
       <!-- dcm meta -->
       <div class="col-md-2">
         <div class="thumbnail">
