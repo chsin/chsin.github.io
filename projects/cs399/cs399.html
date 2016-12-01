@@ -1,0 +1,55 @@
+---
+
+layout: default
+title: cs399
+
+---
+
+<div class="yale_mural">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+        <h3>Stanford CS399 Independet Study Project: Driverless-Car Intersection toy problem with MDPs and DQNs.</h3>
+        <hr>
+        </center>
+      </div>
+    </div>
+
+
+    <div class="row">
+    <center>
+      <div style="padding: 0px 60px 0px 60px;">
+      I took CS399 Independent Study w. Prof. Mykel Kochenderfer. I worked on the intersection problem in which a car is at the bottom of a T-intersection and wants to make a left turn while avoiding collision with another car crossing the intersection. The problem was first modeled as a simple discrete MDP and solved using value iteration implemented in Julia. Then, because I wanted to explore DQN techniques, I coded the problem into a simple video game using mtTkinter and then switching to the PyGame framework. The code was made to be similar to an OpenAi Gym environment in that it has a step function that executes an action and then returns the state, rewards and terminal boolean. I used Tensorflow to code the convolutional neural network using the DQN algorithm with experience replay. The CNN architecture was a scaled down version of what was used in the Deep Mind Atari paper, ut with the same dimensions, e.i. 80x80x4. An example of a training session is below.
+      </div>
+    </center>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+        <hr>
+        video of training session on simple version of the game
+        <br/>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5VXTGypI0cY" frameborder="0" allowfullscreen></iframe>
+        <hr>
+        <br/>
+        <br/>
+        <br/>
+        </center>
+      </div>
+    </div>
+
+    <center>
+      <small>This page rather incomplete and will probably be completed by Dec 2016.</small>
+    </center>
+
+  </div>
+
+  </div>
+</div>
+
+
+
